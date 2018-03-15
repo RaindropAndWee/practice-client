@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: '<replace-with-heroku-url>',
+  production: 'https://wdi-library.herokuapp.com/books',
   development: 'http://localhost:4741'
 }
 
