@@ -3,17 +3,17 @@
 const ui = require('./ui.js')
 const api = require('./api.js')
 
-onGetBooks = function (event) {
+const onGetBooks = function (event) {
   event.preventDefault()
   console.log('inside onGetBooks')
 
-  api.getBooks
-
+  api.getAllGames()
+    .then(ui.getAllBooksSuccess)
+    .catch(ui.getAllBooksFailure)
 }
 
 const addHandlers = () => {
-  $('#books-content').on('submit', onGetAllGames)
-
+  $('#books-content').on('submit', onGetBooks)
 }
 
 module.exports = {
