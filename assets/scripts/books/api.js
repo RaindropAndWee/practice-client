@@ -2,9 +2,24 @@
 
 const config = require('../config.js')
 
-const index = function () {
+const indexBooks = function () {
   return $.ajax({
-    url: config.apiOrigin + '/books',
+    url: 'https://wdi-library.herokuapp.com/books',
     method: 'GET'
   })
+}
+
+const getAllBooks = function () {
+  return $.ajax({
+    url: 'https://wdi-library.herokuapp.com/books',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json'
+    }
+  })
+}
+
+module.exports = {
+  indexBooks,
+  getAllBooks
 }
