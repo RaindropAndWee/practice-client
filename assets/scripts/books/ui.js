@@ -3,7 +3,6 @@
 const showAllBooksTemplate = require('../templates/books-listing.handlebars')
 
 const getAllBooksSuccess = function (data) {
-  console.log('data is ', data)
   const showAllBooksHtml = showAllBooksTemplate({ books: data.books })
   $('#books-content').html(showAllBooksHtml)
   $('#account-message').text('Books retrieved!')
@@ -16,7 +15,12 @@ const getAllBooksFailure = function (error) {
   console.log(error)
 }
 
+const clearBooks = () => {
+  $('#books-content').empty()
+}
+
 module.exports = {
   getAllBooksSuccess,
-  getAllBooksFailure
+  getAllBooksFailure,
+  clearBooks
 }
