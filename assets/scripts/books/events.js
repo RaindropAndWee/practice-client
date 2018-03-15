@@ -11,8 +11,14 @@ const onGetBooks = function (event) {
     .catch(ui.getAllBooksFailure)
 }
 
+const onClearBooks = (event) => {
+  event.preventDefault()
+  ui.clearBooks()
+}
+
 const addHandlers = () => {
   $('#books-get-button').on('click', onGetBooks)
+  $('#clearBooksButton').on('click', onClearBooks)
 }
 
 module.exports = {
